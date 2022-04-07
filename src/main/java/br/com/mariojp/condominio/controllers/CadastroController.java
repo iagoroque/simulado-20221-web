@@ -12,8 +12,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/login")
-public class LoginController extends HttpServlet {
+@WebServlet("/cadastro")
+public class CadastroController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -23,18 +23,14 @@ public class LoginController extends HttpServlet {
 		String login = req.getParameter("login");
 		String senha = req.getParameter("senha");
 
-		Usuario user = udao.findByLogin(login);
+		Usuario user = new Usuario(login, senha);
 
-		// Sistema de Autenticacao
-		if (user == null) {
-			resp.sendRedirect("/login.jsp");
-		} else {
-			if (user.getLogin().equals(login) && user.getSenha().equals(senha)) {
-				resp.sendRedirect("/lista.jsp");
-			} else {
-				resp.sendRedirect("/login.jsp");
-			}
+		udao.save(user);
+
+		if ((login == null) || (senha == null)) {
+			resp.sendRedirect("/cadastro.jsp");
 		}
+		resp.sendRedirect("/lista.jsp");
 	}
 
 }
