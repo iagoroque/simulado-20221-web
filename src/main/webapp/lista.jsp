@@ -1,4 +1,5 @@
-<%@ page import="br.com.mariojp.condominio.dao.UsuarioDAO, br.com.mariojp.condominio.model.Usuario, java.util.*"%>
+<%@ page
+	import="br.com.mariojp.condominio.dao.UsuarioDAO, br.com.mariojp.condominio.model.Usuario, java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -17,17 +18,25 @@
 <body>
 	<div class="px-4 py-5 my-5 text-center">
 		<h1 class="display-5 fw-bold">LISTA DE USUARIOS</h1>
-		<%UsuarioDAO dao = new UsuarioDAO();
-        List<Usuario> list = dao.findAll();
-        for (Usuario u : list) {%>
+		<%
+		UsuarioDAO dao = new UsuarioDAO();
+		List<Usuario> list = dao.findAll();
+		for (Usuario u : list) {
+		%>
 		<h4><%=u.getLogin()%></h4>
 		<br>
-		<% }%>
+		<%
+		}
+		%>
+	</div>
+	<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+		<a href="index.jsp" class="btn btn-primary btn-lg px-4 gap-3">VOLTAR</a>
 	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous">
+		
 	</script>
 </body>
 </html>

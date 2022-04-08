@@ -20,17 +20,18 @@ public class CadastroController extends HttpServlet {
 
 		UsuarioDAO udao = new UsuarioDAO();
 
+		String nula = "";
 		String login = req.getParameter("login");
 		String senha = req.getParameter("senha");
 
 		Usuario user = new Usuario(login, senha);
-
-		udao.save(user);
-
-		if ((login == null) || (senha == null)) {
+		
+		if ((login.equals(nula)) || (senha.equals(nula))) {
 			resp.sendRedirect("/cadastro.jsp");
+		} else {
+			udao.save(user);
+			resp.sendRedirect("/lista.jsp");
 		}
-		resp.sendRedirect("/lista.jsp");
 	}
 
 }

@@ -31,6 +31,9 @@
 				<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
 					<button type="submit" class="btn btn-primary btn-lg px-4 gap-3">Entrar</button>
 				</div>
+				<div class="d-grid gap-2 d-sm-flex justify-content-sm-center" style="margin-top: 5px;">
+					<a href="cadastro.jsp" class="btn btn-primary btn-lg px-4 gap-3">Cadastrar</a>
+				</div>
 			</form>
 
 		</div>

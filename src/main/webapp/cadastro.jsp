@@ -25,7 +25,7 @@
 
       </div>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button type="submit" class="btn btn-primary btn-lg px-4 gap-3">Entrar</button>
+        <button type="submit" class="btn btn-primary btn-lg px-4 gap-3">Criar</button>
       </div>
       </form>
       
