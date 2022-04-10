@@ -50,7 +50,7 @@
 				</ul>
 				</p>
 				<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-					<a href="lista.jsp" class="btn btn-primary btn-lg px-4 gap-3">PARTE 2</a>
+					<a href="/lista" class="btn btn-primary btn-lg px-4 gap-3">PARTE 2</a>
 				</div>
 			</div>
 			<div class="col-lg-6 mx-auto">
@@ -63,7 +63,7 @@
 						no "UsuarioDAO".
 				</ul>
 				<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-					<a href="cadastro.jsp" class="btn btn-primary btn-lg px-4 gap-3">PARTE 3</a>
+					<a href="/cadastro" class="btn btn-primary btn-lg px-4 gap-3">PARTE 3</a>
 				</div>
 			</div>
 		</div>

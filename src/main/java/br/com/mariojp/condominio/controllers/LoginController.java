@@ -15,10 +15,11 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/login")
 public class LoginController extends HttpServlet {
 
+	private UsuarioDAO udao = new UsuarioDAO();
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		UsuarioDAO udao = new UsuarioDAO();
 
 		String login = req.getParameter("login");
 		String senha = req.getParameter("senha");
@@ -30,7 +31,7 @@ public class LoginController extends HttpServlet {
 			resp.sendRedirect("/login.jsp");
 		} else {
 			if (user.getLogin().equals(login) && user.getSenha().equals(senha)) {
-				resp.sendRedirect("/lista.jsp");
+				resp.sendRedirect("/lista");
 			} else {
 				resp.sendRedirect("/login.jsp");
 			}

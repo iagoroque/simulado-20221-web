@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,11 +18,17 @@
 			  <input type="text" class="form-control" name="login" id="login" placeholder="login">
 			  <label for="login">Login</label>
 			</div>
-			<div class="form-floating">
+			<div class="form-floating mb-3">
 			  <input type="password" class="form-control" name="senha" id="senha" placeholder="senha">
 			  <label for="senha">Senha</label>
 			</div>
-
+			<div>
+				<select class="form-select form-select-lg" name="papel">	
+					<c:forEach var="p" items="${papeis}">
+						<option>${p}</option> <!-- Forma de exibir e escolher os papeis passados de CadastroController -->
+					</c:forEach>
+				</select>
+			</div>
       </div>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
         <button type="submit" class="btn btn-primary btn-lg px-4 gap-3">Criar</button>
