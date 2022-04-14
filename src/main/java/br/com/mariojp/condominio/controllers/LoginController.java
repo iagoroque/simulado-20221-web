@@ -26,15 +26,23 @@ public class LoginController extends HttpServlet {
 
 		Usuario user = udao.findByLogin(login);
 
-		// Sistema de Autenticacao
-		if (user == null) {
-			resp.sendRedirect("/login.jsp");
+		// Sistema de Autenticacao que eu fiz originalmente
+//		if (user == null) {
+//			resp.sendRedirect("/login.jsp");
+//		} else {
+//			if (user.getLogin().equals(login) && user.getSenha().equals(senha)) {
+//				resp.sendRedirect("/lista");
+//			} else {
+//				resp.sendRedirect("/login.jsp");
+//			}
+//		}
+		
+		// Logica criada pelo professor
+		if (user != null && user.getSenha().equals(senha)) {
+			req.getSession().setAttribute("usuario", user);
+			resp.sendRedirect("/lista.jsp");
 		} else {
-			if (user.getLogin().equals(login) && user.getSenha().equals(senha)) {
-				resp.sendRedirect("/lista");
-			} else {
-				resp.sendRedirect("/login.jsp");
-			}
+			resp.sendRedirect("/login.jsp");
 		}
 	}
 
