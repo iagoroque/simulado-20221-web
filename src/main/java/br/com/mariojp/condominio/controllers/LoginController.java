@@ -1,11 +1,9 @@
 package br.com.mariojp.condominio.controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import br.com.mariojp.condominio.dao.UsuarioDAO;
 import br.com.mariojp.condominio.model.Usuario;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
